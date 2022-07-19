@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="cityForm" (ngSubmit)="submit()">
+          <input type="text" formControlName="name" placeholder="name">
+          <select formControlName="countryId" name="country">
+            <option *ngFor="let country of listCountries" value="{{country.id}}"
+                    name="country">{{country.name}}</option>
+          </select>
+          <input type="text" formControlName="area" placeholder="area">
+          <input type="text" formControlName="population" placeholder="population">
+          <input type="text" formControlName="gdp" placeholder="GDP">
+          <input type="text" formControlName="description" placeholder="description">
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

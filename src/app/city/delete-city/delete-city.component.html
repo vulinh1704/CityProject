@@ -1,0 +1,28 @@
+<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="cityForm" (ngSubmit)="delete(id)">
+          <input type="text" formControlName="name">
+          <select formControlName="countryId" name="country">
+            <option *ngFor="let country of listCountries" value="{{country.id}}"
+                    name="country">{{country.name}}</option>
+          </select>
+          <input type="text" formControlName="area">
+          <input type="text" formControlName="population">
+          <input type="text" formControlName="gdp">
+          <input type="text" formControlName="description">
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
